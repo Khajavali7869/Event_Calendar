@@ -1,25 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import Calendar from './components/Calendar';
+import { CalendarProvider } from './context/CalendarContext';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CalendarProvider>
+      <div className="min-h-screen bg-gradient-to-br from-gray-100 to-blue-100 p-4">
+        <h1 className="text-3xl font-bold text-center mb-6 text-blue-600">Custom Event Calendar</h1>
+        <Calendar />
+      </div>
+    </CalendarProvider>
   );
 }
-
-export default App;
